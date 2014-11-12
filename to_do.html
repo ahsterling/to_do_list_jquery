@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Ada's To Do List</title>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="to_do.js"></script>
   <style>
     .done {text-decoration: line-through;}
     .notdone {color: blue;}
@@ -11,20 +12,7 @@
   </style>
   <script>
 
-    $(function() {
-      // var $myList = $("#list");
-      for (var i = 0; i < 3; i++) {
-        var myListItem = prompt("What is your list item?");
-        $("#list").append("<li class='notdone'>" + myListItem + "</li>");
-      }
-
-      $(".notdone").click(function() {
-        $(this).toggleClass("done");
-      });
-
-
-
-    });
+    
 
     // window.onload = init;
     //
