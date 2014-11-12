@@ -10,15 +10,12 @@ $(function() {
     var task = $("#task").val();
     var $listItem = $("<li class ='notdone'>" + task + "</li>");
     $listItem.click(function() {
-      $(this).toggleClass("done");
+      $(this).toggleClass("notdone done");
     });
 
     $("#list").append($listItem);
     document.getElementById("task").value = "";
   });
-
-
-
 
 
 });
