@@ -4,6 +4,41 @@ $(function() {
     $(this).toggleClass("selected");
   });
 
+  $("#red-filter").click(function() {
+    $(".red").show();
+    $(".blue").hide();
+    $(".green").hide();
+    $(".purple").hide();
+  });
+
+  $("#blue-filter").click(function() {
+    $(".blue").show();
+    $(".red").hide();
+    $(".green").hide();
+    $(".purple").hide();
+  });
+
+  $("#green-filter").click(function() {
+    $(".green").show();
+    $(".red").hide();
+    $(".blue").hide();
+    $(".purple").hide();
+  });
+
+  $("#purple-filter").click(function() {
+    $(".purple").show();
+    $(".red").hide();
+    $(".blue").hide();
+    $(".green").hide();
+  });
+
+  $("#all-filter").click(function() {
+    $(".purple").show();
+    $(".red").show();
+    $(".blue").show();
+    $(".green").show();
+  });
+
   $("#addTask").click(function(event) {
     event.preventDefault();
     var task = $("#task").val();
