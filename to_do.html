@@ -3,98 +3,53 @@
 <head>
   <meta charset="utf-8">
   <title>Ada's To Do List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="to_do.js"></script>
-  <style>
-    .done {text-decoration: line-through;}
-    .notdone {color: blue;}
-    ul {list-style: none;}
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
-    .checkbox {
-      width: 10px;
-      height: 10px;
-      border: 1px solid black;
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    .done .checkbox {
-      background-color: #38cdaa;
-    }
-  </style>
-  <script>
-
-
-
-    // window.onload = init;
-    //
-    // function init() {
-    //
-    //     var addTaskButton = document.getElementById("addTask");
-    //     addTaskButton.onclick = addTask;
-    //
-    //     var list = document.getElementById("list");
-    //   }
-    //
-    //   function clearTask() {
-    //     if (this.getAttribute("class") == "notdone") {
-    //       this.setAttribute("class", "done");
-    //
-    //       this.getElementsByTagName("input")[0].setAttribute("checked", true);
-    //       console.log(this);
-    //     } else if (this.getAttribute("class") == "done") {
-    //       this.setAttribute("class", "notdone");
-    //
-    //       this.getElementsByTagName("input")[0].removeAttribute("checked");
-    //       console.log(this);
-    //     }
-    //     allDone();
-    //   }
-    //
-    //   function allDone() {
-    //     var allTasks = document.getElementsByTagName("li");
-    //     var doneTasks = document.getElementsByClassName("done");
-    //     var notdoneTasks = document.getElementsByClassName("notdone");
-    //     if (allTasks.length == doneTasks.length) {
-    //       var clear = confirm("Do you want to clear all the tasks?");
-    //       if (clear) {
-    //         while (list.firstElementChild) {
-    //           list.removeChild(list.firstElementChild);
-    //         }
-    //       }
-    //     }
-    //   }
-    //
-    //
-    //   function addTask(event) {
-    //     event.preventDefault();
-    //     var task = document.getElementById("task");
-    //     var list = document.getElementById("list");
-    //
-    //     if (task.value !== "") {
-    //       var newListItem = document.createElement("li");
-    //       newListItem.innerHTML = "<input type='checkbox' class='checkbox'>" + task.value;
-    //       newListItem.setAttribute("class", "notdone");
-    //       newListItem.onclick = clearTask;
-    //       list.appendChild(newListItem);
-    //       task.value = "";
-    //     }
-    //   }
-
-
-  </script>
 </head>
 <body>
-<header>
-    <h1>Ada's To Do List</h1>
-</header>
-<section>
-    <form>
-        <input type="text" id="task">
-        <button id="addTask">add</button>
-    </form>
-    <ul id="list">
-    </ul>
-</section>
+
+  <header class = 'header'>
+    <div class = 'container'>
+      <h1 class="title">Do All the Things!</h1>
+    </div>
+  </header>
+  <div class = 'container page'>
+    <section>
+      <form class = "form-inline">
+        <div class = "form-group">
+          <input type="text" id="task" class="form-control" placeholder = "task">
+        </div>
+        <div class = "form-group">
+          <label class = "radio">
+            <input type = "radio" value = "red">
+            <div class = "color-selector" id="red-select" value = "red"></div>
+            <input type = "radio" value = "blue">
+            <div class = "color-selector" id="blue-select" value = "blue"></div>
+            <input type = "radio"  value = "green">
+            <div class = "color-selector" id="green-select" value = "green"></div>
+            <input type = "radio"  value = "purple">
+            <div class = "color-selector" id="purple-select" value = "purple"></div>
+          </label>
+        </div>
+        <button id="addTask" class = "btn btn-default">add</button>
+      </form>
+
+      <ul id="list">
+      </ul>
+      <div>
+        <button class = "btn btn-default" id = "red-filter">Filter Red</button>
+        <button class = "btn btn-default" id = "blue-filter">Filter Blue</button>
+        <button class = "btn btn-default" id = "green-filter">Filter Green</button>
+        <button class = "btn btn-default" id = "purple-filter">Filter Purple</button>
+      </div>
+    </section>
+  </div>
+
+
 </body>
 </html>

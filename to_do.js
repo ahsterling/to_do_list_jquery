@@ -1,19 +1,29 @@
 $(function() {
 
+  $(".color-selector").click(function() {
+    $(this).toggleClass("selected");
+  });
+
   $("#addTask").click(function(event) {
     event.preventDefault();
     var task = $("#task").val();
     var $listItem = $("<li class ='notdone'><div class = 'checkbox'></div>" + task + "</li>");
+    // var color = "red";
+    // if ($(".selected").typeOf == undefined ) {
+    //   color = $(".selected").get(0).getAttribute("value");
+    // }
+    var color = $(".selected").get(0).getAttribute("value");
+    $listItem.addClass(color);
+    $("ul").sortable();
+
     $listItem.click(function() {
       $(this).toggleClass("notdone done");
-      
       checkDone();
     });
 
-    $("#list").append($listItem);
+    $("#list").append($listItem.fadeIn("400"));
     document.getElementById("task").value = "";
-
-  });
+    $(".color-selector").removeClass("selected");
 
 
   function checkDone() {
@@ -28,4 +38,5 @@ $(function() {
     }
   }
 
+});
 });
