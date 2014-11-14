@@ -1,7 +1,27 @@
 $(function() {
 
   $(".color-selector").click(function() {
+    // $(this).next.
     $(this).toggleClass("selected");
+    var color = $(this).attr("id");
+
+    if (color == "red-select") {
+      $("#blue-select").removeClass("selected");
+      $("#green-select").removeClass("selected");
+      $("#purple-select").removeClass("selected");
+    } else if (color == "blue-select") {
+      $("#red-select").removeClass("selected");
+      $("#green-select").removeClass("selected");
+      $("#purple-select").removeClass("selected");
+    } else if (color == "green-select") {
+      $("#red-select").removeClass("selected");
+      $("#blue-select").removeClass("selected");
+      $("#purple-select").removeClass("selected");
+    } else if (color == "purple-select") {
+      $("#red-select").removeClass("selected");
+      $("#green-select").removeClass("selected");
+      $("#blue-select").removeClass("selected");
+    }
   });
 
   $("#red-filter").click(function() {
@@ -39,6 +59,10 @@ $(function() {
     $(".green").show();
   });
 
+  $("#clear-tasks").click(function() {
+    $("#list").empty();
+  });
+
   $("#addTask").click(function(event) {
     event.preventDefault();
     var task = $("#task").val();
@@ -53,12 +77,13 @@ $(function() {
 
     $listItem.click(function() {
       $(this).toggleClass("notdone done");
-      checkDone();
+      // checkDone();
     });
 
     $("#list").append($listItem.fadeIn("400"));
     document.getElementById("task").value = "";
     $(".color-selector").removeClass("selected");
+
 
 
   function checkDone() {

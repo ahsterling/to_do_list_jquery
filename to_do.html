@@ -26,14 +26,22 @@
         </div>
         <div class = "form-group">
           <label class = "radio">
-            <input type = "radio" value = "red">
-            <span class = "color-selector" id="red-select" value = "red"></span>
-            <input type = "radio" value = "blue">
-            <span class = "color-selector" id="blue-select" value = "blue"></span>
-            <input type = "radio"  value = "green">
-            <span class = "color-selector" id="green-select" value = "green"></span>
-            <input type = "radio"  value = "purple">
-            <span class = "color-selector" id="purple-select" value = "purple"></span>
+            <label>
+              <input type = "radio" value = "red" name = "color">
+              <span class = "color-selector" id="red-select" value = "red"></span>
+            </label>
+            <label>
+              <input type = "radio" value = "blue" name = "color">
+              <span class = "color-selector" id="blue-select" value = "blue"></span>
+            </label>
+            <label>
+              <input type = "radio"  value = "green" name = "color">
+              <span class = "color-selector" id="green-select" value = "green" ></span>
+            </label>
+            <label>
+              <input type = "radio"  value = "purple" name = "color">
+              <span class = "color-selector" id="purple-select" value = "purple"></span>
+            </label>
           </label>
         </div>
         <button id="addTask" class = "btn btn-default">add</button>
@@ -47,8 +55,10 @@
         <button class = "btn btn-default" id = "green-filter">Filter Green Tasks</button>
         <button class = "btn btn-default" id = "purple-filter">Filter Purple Tasks</button>
         <button class = "btn btn-default" id = "all-filter">See All Tasks</button>
+        <button class = "btn btn-danger" id = "clear-tasks">Clear All tasks</button>
       </div>
     </section>
+
   </div>
 
 
